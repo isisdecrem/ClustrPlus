@@ -16,6 +16,10 @@
 		D62977EE24288288000C25A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62977EC24288288000C25A1 /* LaunchScreen.storyboard */; };
 		D62977F924288289000C25A1 /* ClustrPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62977F824288289000C25A1 /* ClustrPlusTests.swift */; };
 		D629780424288289000C25A1 /* ClustrPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629780324288289000C25A1 /* ClustrPlusUITests.swift */; };
+		D62978122428893A000C25A1 /* clubLoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62978112428893A000C25A1 /* clubLoginPage.swift */; };
+		D629781424288A2C000C25A1 /* clubSignUpForAcct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */; };
+		D629781624288AAA000C25A1 /* manageClubsMainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */; };
+		D629781824288B51000C25A1 /* memberBrowseMainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		D62977FF24288289000C25A1 /* ClustrPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClustrPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D629780324288289000C25A1 /* ClustrPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustrPlusUITests.swift; sourceTree = "<group>"; };
 		D629780524288289000C25A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D62978112428893A000C25A1 /* clubLoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clubLoginPage.swift; sourceTree = "<group>"; };
+		D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clubSignUpForAcct.swift; sourceTree = "<group>"; };
+		D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageClubsMainscreen.swift; sourceTree = "<group>"; };
+		D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberBrowseMainscreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,10 @@
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
+				D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */,
+				D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */,
+				D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */,
+				D62978112428893A000C25A1 /* clubLoginPage.swift */,
 				D62977EA24288288000C25A1 /* Assets.xcassets */,
 				D62977EC24288288000C25A1 /* LaunchScreen.storyboard */,
 				D62977EF24288288000C25A1 /* Info.plist */,
@@ -264,7 +276,11 @@
 			files = (
 				D62977E924288285000C25A1 /* ClustrPlus.xcdatamodeld in Sources */,
 				D62977E324288285000C25A1 /* ViewController.swift in Sources */,
+				D629781624288AAA000C25A1 /* manageClubsMainscreen.swift in Sources */,
+				D629781424288A2C000C25A1 /* clubSignUpForAcct.swift in Sources */,
 				D62977DF24288285000C25A1 /* AppDelegate.swift in Sources */,
+				D62978122428893A000C25A1 /* clubLoginPage.swift in Sources */,
+				D629781824288B51000C25A1 /* memberBrowseMainscreen.swift in Sources */,
 				D62977E124288285000C25A1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
