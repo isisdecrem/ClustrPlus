@@ -20,6 +20,8 @@
 		D629781424288A2C000C25A1 /* clubSignUpForAcct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */; };
 		D629781624288AAA000C25A1 /* manageClubsMainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */; };
 		D629781824288B51000C25A1 /* memberBrowseMainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */; };
+		D6EE2FE82429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = D6EE2FE72429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png */; };
+		D6EE2FEA2429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = D6EE2FE92429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clubSignUpForAcct.swift; sourceTree = "<group>"; };
 		D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageClubsMainscreen.swift; sourceTree = "<group>"; };
 		D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberBrowseMainscreen.swift; sourceTree = "<group>"; };
+		D6EE2FE72429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-03-23 at 3.30.43 PM.png"; sourceTree = "<group>"; };
+		D6EE2FE92429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-03-23 at 4.06.56 PM.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				D62977DE24288285000C25A1 /* AppDelegate.swift */,
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
+				D6EE2FE72429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png */,
+				D6EE2FE92429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
 				D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */,
 				D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */,
@@ -249,7 +255,9 @@
 			files = (
 				D62977EE24288288000C25A1 /* LaunchScreen.storyboard in Resources */,
 				D62977EB24288288000C25A1 /* Assets.xcassets in Resources */,
+				D6EE2FE82429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png in Resources */,
 				D62977E624288285000C25A1 /* Main.storyboard in Resources */,
+				D6EE2FEA2429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
