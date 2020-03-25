@@ -92,6 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42633800242B03C00057204D /* Hardcoded Clubs */ = {
+			isa = PBXGroup;
+			children = (
+				D6E566CE242AD73600CEBB78 /* ycsClubDefaultPage.swift */,
+			);
+			path = "Hardcoded Clubs";
+			sourceTree = "<group>";
+		};
+		42DBAC49242B14F40083576E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE2FE92429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png */,
+				D6EE2FE72429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		D62977D224288285000C25A1 = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +135,9 @@
 				D62977DE24288285000C25A1 /* AppDelegate.swift */,
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
-				D6EE2FE72429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png */,
-				D6EE2FE92429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
-				D6E566CE242AD73600CEBB78 /* ycsClubDefaultPage.swift */,
+				42DBAC49242B14F40083576E /* Images */,
+				42633800242B03C00057204D /* Hardcoded Clubs */,
 				D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */,
 				D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */,
 				D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */,

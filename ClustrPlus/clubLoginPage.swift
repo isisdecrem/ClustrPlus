@@ -35,5 +35,9 @@ class clubLoginPage: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @IBAction func close() {
+        dismiss(animated: true, completion: nil)
+    }
 
 }

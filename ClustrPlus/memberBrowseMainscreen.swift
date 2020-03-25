@@ -16,6 +16,9 @@ class memberBrowseMainscreen: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func close() {
+        dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
