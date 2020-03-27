@@ -9,7 +9,19 @@
 import UIKit
 
 class clubSignUpForAcct: UIViewController, UITextFieldDelegate {
-
+    
+    //outlet for user entered email
+    @IBOutlet weak var emailAdd: UITextField!
+    //outlet for user entered pw
+    @IBOutlet weak var password: UITextField!
+    
+    //outlet for user entered confirmed pass
+    @IBOutlet weak var confirmedPassword: UITextField!
+    
+    //action for when sign up is pressed
+    @IBAction func signUpPressed(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

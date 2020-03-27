@@ -380,6 +380,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="signUpPressed:" destination="3Wi-N1-NgU" eventType="touchUpInside" id="yXV-hz-voS"/>
                                     <segue destination="3Az-86-k7Y" kind="show" id="tdF-qx-B3q"/>
                                 </connections>
                             </button>
@@ -397,6 +398,11 @@
                         <viewLayoutGuide key="safeArea" id="neO-tv-9OZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZyX-Tm-F7t"/>
+                    <connections>
+                        <outlet property="confirmedPassword" destination="Vbn-pg-Fei" id="bqQ-I7-MNA"/>
+                        <outlet property="emailAdd" destination="vou-H3-REm" id="hx1-BP-Pos"/>
+                        <outlet property="password" destination="sUd-Yj-Dim" id="qCJ-UD-g51"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ia4-Tv-Xoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
