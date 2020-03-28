@@ -17,7 +17,7 @@ class clubSignUpForAcct: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var pwField: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
