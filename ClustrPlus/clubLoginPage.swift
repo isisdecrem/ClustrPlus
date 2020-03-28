@@ -7,10 +7,43 @@
 //
 
 import UIKit
-
+import Firebase
 
 class clubLoginPage: UIViewController, UITextFieldDelegate {
+   
 
+    
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
+    
+    func showAlert(message : String){
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func loginPressed(_ sender: Any) {
+        let emailValue = email.text
+        let pwValue = password.text
+        
+        if emailValue != ""  && pwValue != ""{
+            Auth.auth().signIn(withEmail: emailValue!, password: pwValue!){ (user, error) in
+                if error != nil{
+                    self.showAlert(message: error!.localizedDescription)
+                }else{
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                }
+            }
+        }
+        else {
+            showAlert(message: "Please enter a username and password.")
+            
+        }
+    }
     
     
     override func viewDidLoad() {

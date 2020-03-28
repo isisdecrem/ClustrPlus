@@ -188,7 +188,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKH-0d-P6t">
                                 <rect key="frame" x="45" y="229" width="324" height="21"/>
                                 <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxj-b8-1TZ">
                                 <rect key="frame" x="45" y="300" width="324" height="35"/>
@@ -202,7 +202,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="3Az-86-k7Y" kind="show" id="h89-xL-giX"/>
+                                    <action selector="loginPressed:" destination="B3C-Iw-07z" eventType="touchUpInside" id="K4R-VC-kR7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpX-pb-E04">
@@ -247,6 +247,11 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Log in" id="2iQ-ub-Yw6"/>
+                    <connections>
+                        <outlet property="email" destination="Bkx-bY-CTh" id="9Wr-WG-Jkk"/>
+                        <outlet property="password" destination="NKH-0d-P6t" id="pyC-xx-0V9"/>
+                        <segue destination="3Az-86-k7Y" kind="show" identifier="loginSegue" id="RNj-dx-CYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXC-wt-gAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,14 +265,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXy-XL-1lc">
-                                <rect key="frame" x="19" y="20" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <segue destination="zUi-35-7Iz" kind="show" id="l3j-1v-fOp"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4M-MO-ZUa">
                                 <rect key="frame" x="19" y="103" width="374" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -310,6 +307,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="8VP-od-LHH" kind="show" id="8Sj-4L-3th"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2020-03-23 at 4.06.56 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="XUG-Pm-G8t">
                                 <rect key="frame" x="164" y="20" width="86" height="75"/>
@@ -324,6 +324,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbb-kY-xZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2784.057971014493" y="127.90178571428571"/>
+        </scene>
+        <!--Make Club View Controller-->
+        <scene sceneID="fxx-UZ-qCU">
+            <objects>
+                <viewController id="8VP-od-LHH" customClass="makeClubViewController" customModule="ClustrPlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NbG-Qc-jj6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Club name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Pz-qR-4Gp">
+                                <rect key="frame" x="33" y="142" width="337" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link to sign up form" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJs-9N-ANy">
+                                <rect key="frame" x="33" y="199" width="337" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DXc-R6-LdT">
+                                <rect key="frame" x="33" y="258" width="337" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sie-rY-mrg">
+                                <rect key="frame" x="184" y="454" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePressed:" destination="8VP-od-LHH" eventType="touchUpInside" id="X2s-1g-IS4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QTa-O7-2Gp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5wH-jY-9r6"/>
+                    <connections>
+                        <outlet property="clubNameField" destination="6Pz-qR-4Gp" id="1nc-IP-SEC"/>
+                        <outlet property="descriptionField" destination="DXc-R6-LdT" id="sKL-Ba-6eb"/>
+                        <outlet property="signUpLinkField" destination="sJs-9N-ANy" id="s6r-fI-SSa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GrC-g4-5sq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3528.985507246377" y="127.90178571428571"/>
         </scene>
         <!--Club Sign Up For Acct-->
         <scene sceneID="j3g-Eh-qke">
@@ -360,13 +411,13 @@
                                 <rect key="frame" x="39" y="269" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vbn-pg-Fei">
                                 <rect key="frame" x="39" y="321" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYV-zT-gac">
                                 <rect key="frame" x="26" y="380" width="356" height="30"/>
@@ -381,7 +432,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpButton:" destination="3Wi-N1-NgU" eventType="touchUpInside" id="uy9-JC-feD"/>
-                                    <segue destination="3Az-86-k7Y" kind="show" id="tdF-qx-B3q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9x-9G-wkB">
@@ -399,8 +449,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZyX-Tm-F7t"/>
                     <connections>
+                        <outlet property="confirmPwField" destination="Vbn-pg-Fei" id="Lty-Vt-pbm"/>
                         <outlet property="emailField" destination="vou-H3-REm" id="fQf-Q1-hBH"/>
                         <outlet property="pwField" destination="sUd-Yj-Dim" id="WfX-Br-r7R"/>
+                        <segue destination="3Az-86-k7Y" kind="show" identifier="signUpSegue" id="lhg-Ab-hsw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ia4-Tv-Xoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -433,6 +485,6 @@
         <image name="Screen Shot 2020-03-23 at 4.06.56 PM.png" width="120" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tdF-qx-B3q"/>
+        <segue reference="lhg-Ab-hsw"/>
     </inferredMetricsTieBreakers>
 </document>
