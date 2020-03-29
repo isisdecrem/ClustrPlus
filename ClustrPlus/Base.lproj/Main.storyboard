@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,37 +39,52 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eM5-e2-6va">
-                                <rect key="frame" x="0.0" y="229" width="414" height="633"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="isr-gM-yIM">
+                                <rect key="frame" x="0.0" y="184" width="414" height="694"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QtE-mU-un6">
-                                    <size key="itemSize" width="144" height="120"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vfC-Qx-k8v">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g7C-Vv-aLp">
-                                            <rect key="frame" x="0.0" y="0.0" width="144" height="120"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="184" id="y9d-hB-99n" customClass="ClubTableViewCell" customModule="ClustrPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="184"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y9d-hB-99n" id="h41-7b-ghG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="144" height="120"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qco-f0-MFd">
+                                                    <rect key="frame" x="26" y="21" width="150" height="142"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="s7e-p5-z3a"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qco-f0-MFd" firstAttribute="leading" secondItem="h41-7b-ghG" secondAttribute="leadingMargin" constant="10" id="KVx-mS-uiQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qco-f0-MFd" secondAttribute="bottom" constant="10" id="fe4-15-rO0"/>
+                                                <constraint firstItem="qco-f0-MFd" firstAttribute="top" secondItem="h41-7b-ghG" secondAttribute="topMargin" constant="10" id="wvd-8D-kbZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="clubNameLabel" destination="qco-f0-MFd" id="hAv-QR-WfA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Az-86-k7Y" id="xdU-EA-aB8"/>
+                                    <outlet property="delegate" destination="3Az-86-k7Y" id="8hX-Th-XLE"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="bqp-XW-Vth" firstAttribute="trailing" secondItem="eM5-e2-6va" secondAttribute="trailing" id="Yau-sH-YfV"/>
-                            <constraint firstItem="bqp-XW-Vth" firstAttribute="bottom" secondItem="eM5-e2-6va" secondAttribute="bottom" id="mR6-n9-hEG"/>
-                            <constraint firstItem="eM5-e2-6va" firstAttribute="leading" secondItem="bqp-XW-Vth" secondAttribute="leading" id="qjC-eh-ICj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bqp-XW-Vth"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tcm-6i-87A"/>
+                    <connections>
+                        <outlet property="tableView" destination="isr-gM-yIM" id="wuD-JE-hj5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrQ-BW-OiR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,7 +276,7 @@
             <objects>
                 <viewController id="3Az-86-k7Y" customClass="manageClubsMainscreen" customModule="ClustrPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mWY-29-JIz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4M-MO-ZUa">
@@ -350,7 +364,7 @@
             <objects>
                 <viewController id="8VP-od-LHH" customClass="makeClubViewController" customModule="ClustrPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NbG-Qc-jj6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your club name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Pz-qR-4Gp">
@@ -445,7 +459,7 @@
             <objects>
                 <viewController id="hc8-uE-ZG2" customClass="ClubDetailsAndEditViewController" customModule="ClustrPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hFI-rP-1VS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-nQ-4pl">
@@ -609,6 +623,6 @@
         <image name="Screen Shot 2020-03-23 at 4.06.56 PM.png" width="120" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pkM-tL-1mc"/>
+        <segue reference="lhg-Ab-hsw"/>
     </inferredMetricsTieBreakers>
 </document>
