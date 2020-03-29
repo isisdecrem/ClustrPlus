@@ -26,6 +26,8 @@
 		D629781424288A2C000C25A1 /* clubSignUpForAcct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */; };
 		D629781624288AAA000C25A1 /* manageClubsMainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */; };
 		D629781824288B51000C25A1 /* memberBrowseMainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */; };
+		D6CC1F9224312C4B00B172BB /* ClubDetailsAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CC1F9124312C4B00B172BB /* ClubDetailsAndEditViewController.swift */; };
+		D6CC1F9424312FDC00B172BB /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CC1F9324312FDC00B172BB /* ClubTableViewCell.swift */; };
 		D6EE2FE82429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = D6EE2FE72429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png */; };
 		D6EE2FEA2429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = D6EE2FE92429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clubSignUpForAcct.swift; sourceTree = "<group>"; };
 		D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageClubsMainscreen.swift; sourceTree = "<group>"; };
 		D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberBrowseMainscreen.swift; sourceTree = "<group>"; };
+		D6CC1F9124312C4B00B172BB /* ClubDetailsAndEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailsAndEditViewController.swift; sourceTree = "<group>"; };
+		D6CC1F9324312FDC00B172BB /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		D6EE2FE72429703800A8BE00 /* Screen Shot 2020-03-23 at 3.30.43 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-03-23 at 3.30.43 PM.png"; sourceTree = "<group>"; };
 		D6EE2FE92429789D00A8BE00 /* Screen Shot 2020-03-23 at 4.06.56 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-03-23 at 4.06.56 PM.png"; sourceTree = "<group>"; };
 		DC0F6BE6EC958861E972BBEF /* Pods-ClustrPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClustrPlusTests.release.xcconfig"; path = "Target Support Files/Pods-ClustrPlusTests/Pods-ClustrPlusTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
+				D6CC1F9124312C4B00B172BB /* ClubDetailsAndEditViewController.swift */,
 				D6183F0D242EDA68004034EC /* makeClubViewController.swift */,
 				42DBAC49242B14F40083576E /* Images */,
 				D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */,
@@ -184,6 +189,7 @@
 				D62977E724288285000C25A1 /* ClustrPlus.xcdatamodeld */,
 				AF514F07242EC184004DBC6C /* GoogleService-Info.plist */,
 				D6183F0F242EDBD7004034EC /* Club.swift */,
+				D6CC1F9324312FDC00B172BB /* ClubTableViewCell.swift */,
 			);
 			path = ClustrPlus;
 			sourceTree = "<group>";
@@ -451,8 +457,10 @@
 				D62977E924288285000C25A1 /* ClustrPlus.xcdatamodeld in Sources */,
 				D62977E324288285000C25A1 /* ViewController.swift in Sources */,
 				D629781624288AAA000C25A1 /* manageClubsMainscreen.swift in Sources */,
+				D6CC1F9424312FDC00B172BB /* ClubTableViewCell.swift in Sources */,
 				D629781424288A2C000C25A1 /* clubSignUpForAcct.swift in Sources */,
 				D62977DF24288285000C25A1 /* AppDelegate.swift in Sources */,
+				D6CC1F9224312C4B00B172BB /* ClubDetailsAndEditViewController.swift in Sources */,
 				D62978122428893A000C25A1 /* clubLoginPage.swift in Sources */,
 				D629781824288B51000C25A1 /* memberBrowseMainscreen.swift in Sources */,
 				D6183F10242EDBD7004034EC /* Club.swift in Sources */,

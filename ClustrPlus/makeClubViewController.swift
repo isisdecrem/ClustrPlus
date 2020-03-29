@@ -20,8 +20,8 @@ class makeClubViewController: UIViewController {
     
     @IBOutlet weak var linkField: UITextField!
     
-    func showAlert(message : String){
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(message : String, title : String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
         
         alertController.addAction(defaultAction)
@@ -33,14 +33,15 @@ class makeClubViewController: UIViewController {
         let clubName = clubNameField.text
         let description = descriptionField.text
         let signUpLink = linkField.text
-        
+        let userId = (Auth.auth().currentUser?.uid)!
         
         
         if clubName != ""  && description != "" && signUpLink != "" {
-            //implement
-            
+            self.ref.child("Clubs").childByAutoId().setValue(["Id" : userId,"Club Name" : clubName, "Club Description" : description, "Club Sign Up Link" : signUpLink]){ (error, ref) -> Void in
+                self.showAlert(message: "The club has been added", title: "Success")
+            }
         }else{
-            showAlert(message: "Fill out the form please.")
+            showAlert(message: "Fill out the form please.", title: "Error")
         }
     }
     
