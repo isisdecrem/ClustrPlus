@@ -301,18 +301,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Label................" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0b-Ys-7L1">
-                                                    <rect key="frame" x="27" y="27" width="363" height="130"/>
+                                                    <rect key="frame" x="26" y="27" width="363" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="363" id="q43-3S-4xU"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="29"/>
-                                                    <color key="textColor" red="0.94670039419999996" green="0.72200340029999999" blue="0.39393028619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Default Label................" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEl-lC-ijG">
-                                                    <rect key="frame" x="37" y="37" width="0.0" height="0.0"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="363" id="u0s-rR-p8G"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="29"/>
                                                     <color key="textColor" red="0.94670039419999996" green="0.72200340029999999" blue="0.39393028619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
