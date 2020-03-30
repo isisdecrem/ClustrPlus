@@ -124,6 +124,19 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		42EBE956243288EB0056965D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */,
+				D6183F0D242EDA68004034EC /* makeClubViewController.swift */,
+				D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */,
+				D6CC1F9124312C4B00B172BB /* ClubDetailsAndEditViewController.swift */,
+				D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */,
+				D62978112428893A000C25A1 /* clubLoginPage.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		914E46865B585C856E0E5A7C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,13 +189,8 @@
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
-				D6CC1F9124312C4B00B172BB /* ClubDetailsAndEditViewController.swift */,
-				D6183F0D242EDA68004034EC /* makeClubViewController.swift */,
+				42EBE956243288EB0056965D /* ViewControllers */,
 				42DBAC49242B14F40083576E /* Images */,
-				D629781724288B51000C25A1 /* memberBrowseMainscreen.swift */,
-				D629781524288AAA000C25A1 /* manageClubsMainscreen.swift */,
-				D629781324288A2C000C25A1 /* clubSignUpForAcct.swift */,
-				D62978112428893A000C25A1 /* clubLoginPage.swift */,
 				D62977EA24288288000C25A1 /* Assets.xcassets */,
 				D62977EC24288288000C25A1 /* LaunchScreen.storyboard */,
 				D62977EF24288288000C25A1 /* Info.plist */,
