@@ -11,6 +11,7 @@
 		73E12E7E6885C0B39CF8E166 /* Pods_ClustrPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA71AB3373263EDF1FE6BDD4 /* Pods_ClustrPlus.framework */; };
 		A24810F589C6FBF10F82CE5F /* Pods_ClustrPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4DF6997561366982A035F5 /* Pods_ClustrPlusTests.framework */; };
 		AF514F08242EC184004DBC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF514F07242EC184004DBC6C /* GoogleService-Info.plist */; };
+		D60050012432A4F0007DCE3C /* MemberClubViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60050002432A4F0007DCE3C /* MemberClubViewerViewController.swift */; };
 		D6183F0E242EDA68004034EC /* makeClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6183F0D242EDA68004034EC /* makeClubViewController.swift */; };
 		D6183F10242EDBD7004034EC /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6183F0F242EDBD7004034EC /* Club.swift */; };
 		D62977DF24288285000C25A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62977DE24288285000C25A1 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		4819B07CDC0835EB69CA4E63 /* Pods-ClustrPlus-ClustrPlusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClustrPlus-ClustrPlusUITests.debug.xcconfig"; path = "Target Support Files/Pods-ClustrPlus-ClustrPlusUITests/Pods-ClustrPlus-ClustrPlusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A1D427F509404879F8BD8E0 /* Pods-ClustrPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClustrPlus.release.xcconfig"; path = "Target Support Files/Pods-ClustrPlus/Pods-ClustrPlus.release.xcconfig"; sourceTree = "<group>"; };
 		AF514F07242EC184004DBC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D60050002432A4F0007DCE3C /* MemberClubViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberClubViewerViewController.swift; sourceTree = "<group>"; };
 		D6183F0D242EDA68004034EC /* makeClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeClubViewController.swift; sourceTree = "<group>"; };
 		D6183F0F242EDBD7004034EC /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		D62977DB24288285000C25A1 /* ClustrPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClustrPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
+				D60050002432A4F0007DCE3C /* MemberClubViewerViewController.swift */,
 				D6CC1F9124312C4B00B172BB /* ClubDetailsAndEditViewController.swift */,
 				D6183F0D242EDA68004034EC /* makeClubViewController.swift */,
 				42DBAC49242B14F40083576E /* Images */,
@@ -458,6 +461,7 @@
 				D62977E324288285000C25A1 /* ViewController.swift in Sources */,
 				D629781624288AAA000C25A1 /* manageClubsMainscreen.swift in Sources */,
 				D6CC1F9424312FDC00B172BB /* ClubTableViewCell.swift in Sources */,
+				D60050012432A4F0007DCE3C /* MemberClubViewerViewController.swift in Sources */,
 				D629781424288A2C000C25A1 /* clubSignUpForAcct.swift in Sources */,
 				D62977DF24288285000C25A1 /* AppDelegate.swift in Sources */,
 				D6CC1F9224312C4B00B172BB /* ClubDetailsAndEditViewController.swift in Sources */,

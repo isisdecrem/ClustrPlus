@@ -56,14 +56,14 @@ class memberBrowseMainscreen: UIViewController, UITableViewDelegate, UITableView
 
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? ClubTableViewCell{
-            let detailEditView = segue.destination as? ClubDetailsAndEditViewController
-            detailEditView?.club = clubsList[((cell.indexPath?.section)!)]
-        }
-    }
+ 
     
-  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if let cell = sender as? ClubTableViewCell{
+          let detailEditView = segue.destination as? MemberClubViewerViewController
+          detailEditView?.club = clubsList[((cell.indexPath?.section)!)]
+      }
+  }
 
    
 
