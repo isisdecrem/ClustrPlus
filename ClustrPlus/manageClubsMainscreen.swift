@@ -55,13 +55,5 @@ class manageClubsMainscreen: UIViewController, UITableViewDelegate, UITableViewD
             self.tableView.reloadData()
         })
     }
-    
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? ClubTableViewCell{
-            let detailEditView = segue.destination as? ClubDetailsAndEditViewController
-            detailEditView?.club = clubsList[((cell.indexPath?.section)!)]
-        }
-    }
 
 }

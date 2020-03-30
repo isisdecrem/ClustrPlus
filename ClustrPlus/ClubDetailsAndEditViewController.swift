@@ -10,8 +10,12 @@ import UIKit
 
 class ClubDetailsAndEditViewController: UIViewController {
     var club: Club!
+    var scheduleState = true
     @IBOutlet weak var clubName: UILabel!
     @IBOutlet weak var clubLink: UILabel!
+    
+    @IBOutlet weak var updateB: UIButton!
+    @IBOutlet weak var scheduleB: UIButton!
     
     @IBOutlet weak var clubDescription: UITextView!
     
@@ -21,6 +25,30 @@ class ClubDetailsAndEditViewController: UIViewController {
         clubLink.text = club.signUpLink
         clubDescription.text = club.description
         
+    }
+    
+    @IBAction func schedulePress () {
+        if scheduleState == false {
+            let SD = #imageLiteral(resourceName: "Schedule Selected")
+            let UL = #imageLiteral(resourceName: "Updates Unselected")
+            scheduleB.setImage(SD, for: .normal)
+            updateB.setImage(UL, for: .normal)
+            scheduleState = true
+            
+            // Add code for displaying updates page here
+        }
+    }
+    
+    @IBAction func updatePress(){
+        if scheduleState {
+            let SL = #imageLiteral(resourceName: "Schedule Unselected")
+            let UD = #imageLiteral(resourceName: "Updates Selected")
+            scheduleB.setImage(SL, for: .normal)
+            updateB.setImage(UD, for: .normal)
+            scheduleState = false
+            
+            // add code for displaying schedule page here
+        }
     }
     
 
