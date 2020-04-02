@@ -7,10 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
-class ClubDetailsAndEditViewController: UIViewController {
+class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var events: [Event] = []
+    var ref: DatabaseReference!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return events.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
+        
+        return cell
+    }
+    
     var club: Club!
     var scheduleState = true
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     @IBOutlet weak var clubName: UILabel!
     @IBOutlet weak var clubLink: UILabel!
     
@@ -21,9 +42,12 @@ class ClubDetailsAndEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         clubName.text = club.name
         clubLink.text = club.signUpLink
         clubDescription.text = club.description
+        tableView.dataSource = self
+        tableView.delegate = self
         
     }
     
@@ -50,6 +74,18 @@ class ClubDetailsAndEditViewController: UIViewController {
             // add code for displaying schedule page here
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewEventSegue"  {
+              let newEvent = segue.destination as? CreateNewEventViewController
+            newEvent?.clubId = club.clubId
+          }
+        else if segue.identifier == "toEdit"{
+            let editEvent = segue.destination  as? EditClubViewController
+            editEvent!.club = self.club
+        }
+      }
+
     
 
 

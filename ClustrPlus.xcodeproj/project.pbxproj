@@ -12,6 +12,10 @@
 		A24810F589C6FBF10F82CE5F /* Pods_ClustrPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4DF6997561366982A035F5 /* Pods_ClustrPlusTests.framework */; };
 		AF514F08242EC184004DBC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF514F07242EC184004DBC6C /* GoogleService-Info.plist */; };
 		D60050012432A4F0007DCE3C /* MemberClubViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60050002432A4F0007DCE3C /* MemberClubViewerViewController.swift */; };
+		D60050032435662E007DCE3C /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60050022435662E007DCE3C /* CreateNewEventViewController.swift */; };
+		D600500524356951007DCE3C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D600500424356951007DCE3C /* Event.swift */; };
+		D600500724356ED8007DCE3C /* EditClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D600500624356ED8007DCE3C /* EditClubViewController.swift */; };
+		D600500924357B59007DCE3C /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D600500824357B59007DCE3C /* EventCellTableViewCell.swift */; };
 		D6183F0E242EDA68004034EC /* makeClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6183F0D242EDA68004034EC /* makeClubViewController.swift */; };
 		D6183F10242EDBD7004034EC /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6183F0F242EDBD7004034EC /* Club.swift */; };
 		D62977DF24288285000C25A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62977DE24288285000C25A1 /* AppDelegate.swift */; };
@@ -58,6 +62,10 @@
 		9A1D427F509404879F8BD8E0 /* Pods-ClustrPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClustrPlus.release.xcconfig"; path = "Target Support Files/Pods-ClustrPlus/Pods-ClustrPlus.release.xcconfig"; sourceTree = "<group>"; };
 		AF514F07242EC184004DBC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D60050002432A4F0007DCE3C /* MemberClubViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberClubViewerViewController.swift; sourceTree = "<group>"; };
+		D60050022435662E007DCE3C /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEventViewController.swift; sourceTree = "<group>"; };
+		D600500424356951007DCE3C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D600500624356ED8007DCE3C /* EditClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClubViewController.swift; sourceTree = "<group>"; };
+		D600500824357B59007DCE3C /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
 		D6183F0D242EDA68004034EC /* makeClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeClubViewController.swift; sourceTree = "<group>"; };
 		D6183F0F242EDBD7004034EC /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		D62977DB24288285000C25A1 /* ClustrPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClustrPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +186,10 @@
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
+				D600500824357B59007DCE3C /* EventCellTableViewCell.swift */,
+				D600500624356ED8007DCE3C /* EditClubViewController.swift */,
+				D60050022435662E007DCE3C /* CreateNewEventViewController.swift */,
+				D600500424356951007DCE3C /* Event.swift */,
 				D60050002432A4F0007DCE3C /* MemberClubViewerViewController.swift */,
 				D6CC1F9124312C4B00B172BB /* ClubDetailsAndEditViewController.swift */,
 				D6183F0D242EDA68004034EC /* makeClubViewController.swift */,
@@ -459,8 +471,10 @@
 			files = (
 				D62977E924288285000C25A1 /* ClustrPlus.xcdatamodeld in Sources */,
 				D62977E324288285000C25A1 /* ViewController.swift in Sources */,
+				D600500724356ED8007DCE3C /* EditClubViewController.swift in Sources */,
 				D629781624288AAA000C25A1 /* manageClubsMainscreen.swift in Sources */,
 				D6CC1F9424312FDC00B172BB /* ClubTableViewCell.swift in Sources */,
+				D600500524356951007DCE3C /* Event.swift in Sources */,
 				D60050012432A4F0007DCE3C /* MemberClubViewerViewController.swift in Sources */,
 				D629781424288A2C000C25A1 /* clubSignUpForAcct.swift in Sources */,
 				D62977DF24288285000C25A1 /* AppDelegate.swift in Sources */,
@@ -469,7 +483,9 @@
 				D629781824288B51000C25A1 /* memberBrowseMainscreen.swift in Sources */,
 				D6183F10242EDBD7004034EC /* Club.swift in Sources */,
 				D62977E124288285000C25A1 /* SceneDelegate.swift in Sources */,
+				D60050032435662E007DCE3C /* CreateNewEventViewController.swift in Sources */,
 				D6183F0E242EDA68004034EC /* makeClubViewController.swift in Sources */,
+				D600500924357B59007DCE3C /* EventCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

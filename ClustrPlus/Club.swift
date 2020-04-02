@@ -15,18 +15,22 @@ class Club{
     var name: String = ""
     var description: String = ""
     var signUpLink: String = ""
+    var clubId: Int = 0
     
-    init(id: String, name: String, description: String, signUpLink: String) {
+    init(clubId: Int, id: String, name: String, description: String, signUpLink: String) {
         self.ref = nil
+        self.clubId = clubId
         self.id = id
         self.name = name
         self.description = description
         self.signUpLink = signUpLink
+        
     }
     
     init?(snapshot : DataSnapshot){
         guard
             let value = snapshot.value as? [String : AnyObject],
+            let fClubId = value["Club Id"] as? Int,
             let fId = value["Id"] as? String,
             let fName = value["Club Name"] as? String,
             let fDescription = value["Club Description"] as? String,
@@ -35,6 +39,7 @@ class Club{
             return nil
         }
         self.ref = snapshot.ref
+        self.clubId = fClubId
         self.id = fId
         self.name = fName
         self.description = fDescription
@@ -42,7 +47,8 @@ class Club{
     }
     
     func toAnyObject() -> Any{
-        return["Id": id,
+        return["Club Id" : clubId,
+            "Id": id,
                 "Club Name" : name,
                "Club Description" : description,
                "Club Sign Up Link" : signUpLink
