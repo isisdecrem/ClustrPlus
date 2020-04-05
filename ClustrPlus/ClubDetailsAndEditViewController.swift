@@ -40,6 +40,8 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
     
     @IBOutlet weak var clubDescription: UITextView!
     
+    @IBOutlet weak var newButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -48,6 +50,8 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
         clubDescription.text = club.description
         tableView.dataSource = self
         tableView.delegate = self
+        let newEvent = #imageLiteral(resourceName: "New Schedule")
+        newButton.setImage(newEvent, for: .normal)
         
     }
     
@@ -58,8 +62,11 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             scheduleB.setImage(SD, for: .normal)
             updateB.setImage(UL, for: .normal)
             scheduleState = true
-            
+            let newEvent = #imageLiteral(resourceName: "New Schedule")
+            newButton.setImage(newEvent, for: .normal)
             // Add code for displaying updates page here
+            
+            
         }
     }
     
@@ -70,6 +77,8 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             scheduleB.setImage(SL, for: .normal)
             updateB.setImage(UD, for: .normal)
             scheduleState = false
+            let newUpdate = #imageLiteral(resourceName: "New Update")
+            newButton.setImage(newUpdate, for: .normal)
             
             // add code for displaying schedule page here
         }

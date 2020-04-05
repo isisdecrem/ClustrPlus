@@ -62,6 +62,7 @@ class EditClubViewController: UIViewController {
             showAlert(message: "fill out all fields", title: "Error")
         }
         
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,11 @@ class EditClubViewController: UIViewController {
         clubLink.text = oldLink
         clubDescription.text = oldDescription
         ref = Database.database().reference()
+        
+        let borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+        clubDescription.layer.borderWidth = 1
+        clubDescription.layer.borderColor = borderColor.cgColor
+        clubDescription.layer.cornerRadius = 5.0
     }
     
 
