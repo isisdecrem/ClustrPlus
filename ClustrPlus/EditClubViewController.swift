@@ -53,6 +53,7 @@ class EditClubViewController: UIViewController {
                                     ,"Club Name" : newName!, "Club Description" : newDescription!, "Club Sign Up Link" : newLink!])
                                 self.delegate?.finishEditing(club: Club(clubId: self.club!.clubId, id:  self.club!.id, name: newName!, description: newDescription!, signUpLink: newLink!))
                                 self.showAlert(message: "The club has been updated", title: "Success")
+
                                 break
                             }
                         }
@@ -63,7 +64,6 @@ class EditClubViewController: UIViewController {
         else {
             showAlert(message: "fill out all fields", title: "Error")
         }
-        
         
     }
     override func viewDidLoad() {
@@ -80,6 +80,7 @@ class EditClubViewController: UIViewController {
         clubDescription.layer.borderWidth = 1
         clubDescription.layer.borderColor = borderColor.cgColor
         clubDescription.layer.cornerRadius = 5.0
+
     }
     
 }

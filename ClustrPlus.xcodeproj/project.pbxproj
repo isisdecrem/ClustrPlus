@@ -188,7 +188,6 @@
 				D62977E024288285000C25A1 /* SceneDelegate.swift */,
 				D62977E224288285000C25A1 /* ViewController.swift */,
 				D62977E424288285000C25A1 /* Main.storyboard */,
-				D6C95109243C24C000F9499D /* Update.swift */,
 				D600500824357B59007DCE3C /* EventCellTableViewCell.swift */,
 				D600500624356ED8007DCE3C /* EditClubViewController.swift */,
 				D60050022435662E007DCE3C /* CreateNewEventViewController.swift */,
@@ -206,6 +205,7 @@
 				D62977EF24288288000C25A1 /* Info.plist */,
 				D62977E724288285000C25A1 /* ClustrPlus.xcdatamodeld */,
 				AF514F07242EC184004DBC6C /* GoogleService-Info.plist */,
+				D6C95109243C24C000F9499D /* Update.swift */,
 				D6183F0F242EDBD7004034EC /* Club.swift */,
 				D6CC1F9324312FDC00B172BB /* ClubTableViewCell.swift */,
 			);

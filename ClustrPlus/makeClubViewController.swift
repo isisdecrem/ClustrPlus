@@ -53,8 +53,7 @@ class makeClubViewController: UIViewController {
         let borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
         descriptionField.layer.borderWidth = 1
         descriptionField.layer.borderColor = borderColor.cgColor
-        descriptionField.layer.cornerRadius = 5.0
-       
+        descriptionField.layer.cornerRadius = 5.0       
     }
 
 }
