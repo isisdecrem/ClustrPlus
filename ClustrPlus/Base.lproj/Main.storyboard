@@ -15,37 +15,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeT-Ja-J6F">
-                                <rect key="frame" x="159" y="102" width="97" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCF-fe-bpy">
+                                <rect key="frame" x="10" y="123" width="394" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="40"/>
+                                <color key="textColor" red="0.94138294460000005" green="0.63963288070000002" blue="0.35761284830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlf-8t-E7V">
-                                <rect key="frame" x="155" y="190" width="97" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8m-oO-NEs">
+                                <rect key="frame" x="228" y="367" width="111" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Club Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-eg-EiP">
-                                <rect key="frame" x="87" y="219" width="240" height="128"/>
+                                <state key="normal" title="Schedule" image="Updates Unselected"/>
+                                <connections>
+                                    <action selector="updatePress" destination="Kt3-4x-5Td" eventType="touchUpInside" id="oJo-z0-IYM"/>
+                                    <action selector="updatePress" destination="hc8-uE-ZG2" eventType="touchUpInside" id="vno-ru-XLy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCV-CS-fAA">
+                                <rect key="frame" x="75" y="367" width="111" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Schedule" image="Schedule Selected"/>
+                                <connections>
+                                    <action selector="schedulePress" destination="hc8-uE-ZG2" eventType="touchUpInside" id="Lt8-KR-teA"/>
+                                    <action selector="schedulePress" destination="Kt3-4x-5Td" eventType="touchUpInside" id="fBy-eT-KRZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ds-lu-rT3">
+                                <rect key="frame" x="23" y="427" width="369" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <state key="normal" title="                Create New Event" image="New Schedule">
+                                    <color key="titleColor" red="0.93917375800000003" green="0.72984856369999995" blue="0.39328700300000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Znq-MX-azH">
+                                <rect key="frame" x="47" y="234" width="321" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.96011620760000005" green="0.80820041890000005" blue="0.56533581020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiN-H9-t41">
+                                <rect key="frame" x="47" y="189" width="321" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96717792749999998" green="0.78075319529999998" blue="0.54195529220000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ffs-mQ-JY9"/>
                     </view>
                     <navigationItem key="navigationItem" id="mpk-v7-m0H"/>
                     <connections>
-                        <outlet property="clubDescription" destination="LJD-eg-EiP" id="mhP-wa-rEV"/>
-                        <outlet property="clubLink" destination="Wlf-8t-E7V" id="ksj-O1-doT"/>
-                        <outlet property="clubName" destination="EeT-Ja-J6F" id="ryd-OY-FwZ"/>
+                        <outlet property="clubDescription" destination="Znq-MX-azH" id="1GB-SH-Hno"/>
+                        <outlet property="clubLink" destination="TiN-H9-t41" id="4ag-gj-NfB"/>
+                        <outlet property="clubName" destination="lCF-fe-bpy" id="1Kk-df-y6A"/>
+                        <outlet property="newButton" destination="3Ds-lu-rT3" id="gtj-zf-CtB"/>
+                        <outlet property="scheduleB" destination="pCV-CS-fAA" id="TgD-N0-dbe"/>
+                        <outlet property="updateB" destination="r8m-oO-NEs" id="zO8-aZ-NmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gj0-3s-MnX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -582,13 +614,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w48-A0-uGl">
-                                <rect key="frame" x="10" y="98" width="394" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="40"/>
-                                <color key="textColor" red="0.94138294460000005" green="0.63963288070000002" blue="0.35761284830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-nQ-4pl">
                                 <rect key="frame" x="47" y="174" width="321" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -672,6 +697,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w48-A0-uGl">
+                                <rect key="frame" x="10" y="117" width="394" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="40"/>
+                                <color key="textColor" red="0.94138294460000005" green="0.63963288070000002" blue="0.35761284830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="lbK-oe-iYD"/>

@@ -14,10 +14,15 @@ class MemberClubViewerViewController: UIViewController {
    var scheduleState = true
   
     @IBOutlet weak var clubName: UILabel!
- 
+    
     @IBOutlet weak var clubLink: UILabel!
     
+    @IBOutlet weak var updateB: UIButton!
+    @IBOutlet weak var scheduleB: UIButton!
+    
     @IBOutlet weak var clubDescription: UITextView!
+    
+    @IBOutlet weak var newButton: UIButton!
     
     
    override func viewDidLoad() {
@@ -25,8 +30,36 @@ class MemberClubViewerViewController: UIViewController {
        clubName.text = club.name
        clubLink.text = club.signUpLink
        clubDescription.text = club.description
-       
+        let newEvent = #imageLiteral(resourceName: "New Schedule")
+        newButton.setImage(newEvent, for: .normal)
+        
    }
+    
+    @IBAction func schedulePress () {
+        if scheduleState == false {
+            let SD = #imageLiteral(resourceName: "Schedule Selected")
+            let UL = #imageLiteral(resourceName: "Updates Unselected")
+            scheduleB.setImage(SD, for: .normal)
+            updateB.setImage(UL, for: .normal)
+            scheduleState = true
+            let newEvent = #imageLiteral(resourceName: "New Schedule")
+            newButton.setImage(newEvent, for: .normal)
+        
+        }
+    }
+    
+    @IBAction func updatePress(){
+        if scheduleState {
+            let SL = #imageLiteral(resourceName: "Schedule Unselected")
+            let UD = #imageLiteral(resourceName: "Updates Selected")
+            scheduleB.setImage(SL, for: .normal)
+            updateB.setImage(UD, for: .normal)
+            scheduleState = false
+            let newUpdate = #imageLiteral(resourceName: "New Update")
+            newButton.setImage(newUpdate, for: .normal)
+            
+        }
+    }
     
 
 
