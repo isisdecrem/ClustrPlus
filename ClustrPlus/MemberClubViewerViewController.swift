@@ -7,12 +7,48 @@
 //
 
 import UIKit
+import Firebase
 
-class MemberClubViewerViewController: UIViewController {
+class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+
+    var events: [Event] = []
+    var updates: [Update] = []
+    var ref: DatabaseReference!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+        
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if scheduleState == true {
+            print(events.count)
+            return events.count
+        } else{
+            return updates.count
+        }
+            
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCellTableViewCell
+        if scheduleState == true {
+            print("I am here")
+            cell.title.text = events[indexPath.section].title
+            cell.indexPath = indexPath
+        }else{
+            //cant do this until the updates file has variables w/ names
+//           cell.title.text = updates[indexPath.section].name
+//           cell.indexPath = indexPath
+        }
+            
+        return cell
+            
+    }
+    
+    
 
    var club: Club!
    var scheduleState = true
   
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clubName: UILabel!
     
     @IBOutlet weak var clubLink: UILabel!
@@ -25,15 +61,48 @@ class MemberClubViewerViewController: UIViewController {
     @IBOutlet weak var newButton: UIButton!
     
     
-   override func viewDidLoad() {
-       super.viewDidLoad()
-       clubName.text = club.name
-       clubLink.text = club.signUpLink
-       clubDescription.text = club.description
+  // override func viewDidLoad() {
+  //     super.viewDidLoad()
+   //    clubName.text = club.name
+   //    clubLink.text = club.signUpLink
+   //    clubDescription.text = club.description
+   //     let newEvent = #imageLiteral(resourceName: "New Schedule")
+   //     newButton.setImage(newEvent, for: .normal)
+        
+  // }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ref = Database.database().reference()
+        clubName.text = club.name
+        clubLink.text = club.signUpLink
+        clubDescription.text = club.description
+        tableView.dataSource = self
+        tableView.delegate = self
         let newEvent = #imageLiteral(resourceName: "New Schedule")
         newButton.setImage(newEvent, for: .normal)
         
-   }
+        if scheduleState == true {
+        ref.child("Events").queryOrdered(byChild: "Event Title").observe(.value, with: { snapshot
+            in
+            var newEvents: [Event] = []
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot,
+                let event = Event(snapshot: snapshot){
+                    if  event.clubId == self.club.clubId{
+                        print("New event added")
+                        newEvents.append(event)
+                    }
+                }
+            }
+            
+            self.events = newEvents
+            self.tableView.reloadData()
+        })
+        } else {
+            // load the updates
+        }
+    }
     
     @IBAction func schedulePress () {
         if scheduleState == false {

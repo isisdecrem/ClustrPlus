@@ -66,6 +66,44 @@
                                 <color key="textColor" red="0.96717792749999998" green="0.78075319529999998" blue="0.54195529220000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZsV-XR-Lt0">
+                                <rect key="frame" x="0.0" y="482" width="414" height="404"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="133" id="1lz-Od-eWl" customClass="EventCellTableViewCell" customModule="ClustrPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="133"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1lz-Od-eWl" id="I6L-3B-jon">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itr-Oj-OED">
+                                                    <rect key="frame" x="22" y="21" width="358" height="91"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="358" id="woh-OS-Xer"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="itr-Oj-OED" firstAttribute="leading" secondItem="I6L-3B-jon" secondAttribute="leadingMargin" constant="6" id="6b1-xF-vdb"/>
+                                                <constraint firstItem="itr-Oj-OED" firstAttribute="centerY" secondItem="I6L-3B-jon" secondAttribute="centerY" id="EBM-aG-Jsc"/>
+                                                <constraint firstItem="itr-Oj-OED" firstAttribute="top" secondItem="I6L-3B-jon" secondAttribute="topMargin" constant="10" id="vg3-Nj-lSe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="itr-Oj-OED" id="p4T-Q8-zh6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hc8-uE-ZG2" id="ant-aH-FSd"/>
+                                    <outlet property="delegate" destination="hc8-uE-ZG2" id="eX2-Kq-Z3j"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ffs-mQ-JY9"/>
@@ -77,6 +115,7 @@
                         <outlet property="clubName" destination="lCF-fe-bpy" id="1Kk-df-y6A"/>
                         <outlet property="newButton" destination="3Ds-lu-rT3" id="gtj-zf-CtB"/>
                         <outlet property="scheduleB" destination="pCV-CS-fAA" id="TgD-N0-dbe"/>
+                        <outlet property="tableView" destination="ZsV-XR-Lt0" id="R09-7G-e4K"/>
                         <outlet property="updateB" destination="r8m-oO-NEs" id="zO8-aZ-NmI"/>
                     </connections>
                 </viewController>
