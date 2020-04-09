@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CreateNewEventViewController: UIViewController {
+class CreateNewEventViewController: UIViewController{
 
     @IBOutlet weak var eventTitle: UITextField!
     
@@ -44,7 +44,7 @@ class CreateNewEventViewController: UIViewController {
         let extra = eventExtra.text ?? ""
  
         if title != ""  && date != "" && time != "" && location != "" {
-            self.ref.child("Events").childByAutoId().setValue(["Club Id" : clubId ,"Event Title " : title, "Event Date" : date,"Event Time" : time!, "Event Location" : location!, "Event Extra" : extra]){ (error, ref) -> Void in
+            self.ref.child("Events").childByAutoId().setValue(["Club Id" : clubId ,"Event Title" : title, "Event Date" : date,"Event Time" : time!, "Event Location" : location!, "Event Extra" : extra]){ (error, ref) -> Void in
                 self.showAlert(message: "The event has been added", title: "Success")
             }
         }else{

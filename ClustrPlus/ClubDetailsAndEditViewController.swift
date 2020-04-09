@@ -84,7 +84,7 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
                 if let snapshot = child as? DataSnapshot,
                 let event = Event(snapshot: snapshot){
                     if  event.clubId == self.club.clubId{
-                        print("New event addedd")
+                        print("New event added")
                         newEvents.append(event)
                     }
                 }
