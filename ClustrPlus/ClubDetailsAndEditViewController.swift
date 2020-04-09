@@ -94,7 +94,22 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             self.tableView.reloadData()
         })
         } else {
-            // load the updates
+            ref.child("Updates").queryOrdered(byChild: "Update Title").observe(.value, with: { snapshot
+                in
+                var newUpdates: [Update] = []
+                for child in snapshot.children{
+                    if let snapshot = child as? DataSnapshot,
+                    let update = Update(snapshot: snapshot){
+                        if  update.clubId == self.club.clubId{
+                            print("New update posted")
+                            newUpdates.append(update)
+                        }
+                    }
+                }
+                
+                self.updates = newUpdates
+                self.tableView.reloadData()
+            })
         }
     }
     
