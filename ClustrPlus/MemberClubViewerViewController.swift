@@ -60,17 +60,6 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBOutlet weak var newButton: UIButton!
     
-    
-  // override func viewDidLoad() {
-  //     super.viewDidLoad()
-   //    clubName.text = club.name
-   //    clubLink.text = club.signUpLink
-   //    clubDescription.text = club.description
-   //     let newEvent = #imageLiteral(resourceName: "New Schedule")
-   //     newButton.setImage(newEvent, for: .normal)
-        
-  // }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
