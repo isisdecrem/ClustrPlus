@@ -28,16 +28,24 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
             
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCellTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! MemberEventTableViewCell
         if scheduleState == true {
-            print("I am here")
-            cell.title.text = events[indexPath.section].title
-            cell.indexPath = indexPath
-        }else{
-            //cant do this until the updates file has variables w/ names
-//           cell.title.text = updates[indexPath.section].name
-//           cell.indexPath = indexPath
-        }
+                cell.title.text = events[indexPath.section].title
+                cell.Time.text = events[indexPath.section].time
+                cell.Date.text = events[indexPath.section].date
+                cell.Location.text = events[indexPath.section].location
+                cell.Description.text = events[indexPath.section].extra
+                cell.Description.isEditable = false
+                cell.indexPath = indexPath
+          }else{
+        
+              cell.title.text = updates[indexPath.section].title
+              cell.Description.text = updates[indexPath.section].update
+              cell.Time.isHidden = true
+              cell.Location.isHidden = true
+              cell.Date.isHidden = true
+              cell.indexPath = indexPath
+          }
             
         return cell
             
@@ -54,11 +62,11 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var clubLink: UILabel!
     
     @IBOutlet weak var updateB: UIButton!
+    
     @IBOutlet weak var scheduleB: UIButton!
     
     @IBOutlet weak var clubDescription: UITextView!
     
-    @IBOutlet weak var newButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +77,6 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
         tableView.dataSource = self
         tableView.delegate = self
         let newEvent = #imageLiteral(resourceName: "New Schedule")
-        newButton.setImage(newEvent, for: .normal)
         
         if scheduleState == true {
         ref.child("Events").queryOrdered(byChild: "Event Title").observe(.value, with: { snapshot
@@ -97,12 +104,9 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
         if scheduleState == false {
             let SD = #imageLiteral(resourceName: "Schedule Selected")
             let UL = #imageLiteral(resourceName: "Updates Unselected")
-            scheduleB.setImage(SD, for: .normal)
             updateB.setImage(UL, for: .normal)
+            scheduleB.setImage(SD, for: .normal)
             scheduleState = true
-            let newEvent = #imageLiteral(resourceName: "New Schedule")
-            newButton.setImage(newEvent, for: .normal)
-        
         }
     }
     
@@ -110,11 +114,9 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
         if scheduleState {
             let SL = #imageLiteral(resourceName: "Schedule Unselected")
             let UD = #imageLiteral(resourceName: "Updates Selected")
+             updateB.setImage(UD, for: .normal)
             scheduleB.setImage(SL, for: .normal)
-            updateB.setImage(UD, for: .normal)
             scheduleState = false
-            let newUpdate = #imageLiteral(resourceName: "New Update")
-            newButton.setImage(newUpdate, for: .normal)
             
         }
     }
