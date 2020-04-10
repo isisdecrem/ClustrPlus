@@ -37,11 +37,20 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
         if scheduleState == true {
             print("I am here")
             cell.title.text = events[indexPath.section].title
+            cell.Time.text = events[indexPath.section].time
+            cell.Date.text = events[indexPath.section].date
+            cell.Location.text = events[indexPath.section].location
+            cell.Description.text = events[indexPath.section].extra
+            cell.Description.isEditable = false
             cell.indexPath = indexPath
         }else{
-            //cant do this until the updates file has variables w/ names
-//            cell.title.text = updates[indexPath.section].name
-//            cell.indexPath = indexPath
+      
+            cell.title.text = updates[indexPath.section].title
+            cell.Description.text = updates[indexPath.section].update
+            cell.Time.isHidden = true
+            cell.Location.isHidden = true
+            cell.Date.isHidden = true
+            cell.indexPath = indexPath
         }
         
         return cell
@@ -64,6 +73,17 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var clubDescription: UITextView!
     
     @IBOutlet weak var newButton: UIButton!
+    
+    @IBAction func newButtonPressed(_ sender: Any) {
+        
+        if scheduleState == true{
+            self.performSegue(withIdentifier: "ShowMakeNewEvent", sender: self)
+        }
+        else{
+             self.performSegue(withIdentifier: "ShowMakeNewUpdate", sender: self)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +142,7 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             scheduleState = true
             let newEvent = #imageLiteral(resourceName: "New Schedule")
             newButton.setImage(newEvent, for: .normal)
-        
+            tableView.reloadData()
         }
     }
     
@@ -135,15 +155,19 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             scheduleState = false
             let newUpdate = #imageLiteral(resourceName: "New Update")
             newButton.setImage(newUpdate, for: .normal)
-            
+            tableView.reloadData()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "NewEventSegue"  {
+        if segue.identifier == "ShowMakeNewEvent"  {
               let newEvent = segue.destination as? CreateNewEventViewController
             newEvent?.clubId = club.clubId
           }
+        else if segue.identifier == "ShowMakeNewUpdate"{
+            let newUpdate = segue.destination as? CreateNewUpdateViewController
+            newUpdate?.clubId = club.clubId
+        }
         else if segue.identifier == "toEdit"{
             let editEvent = segue.destination  as? EditClubViewController
             editEvent!.club = self.club

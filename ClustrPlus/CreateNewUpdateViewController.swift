@@ -13,7 +13,7 @@ class CreateNewUpdateViewController: UIViewController{
 
     @IBOutlet weak var updateTitle: UITextField!
     
-    @IBOutlet weak var updateInfo: UITextField!
+    @IBOutlet weak var updateInfo: UITextView!
     
     var clubId: Int = 0
     var ref: DatabaseReference!
@@ -31,10 +31,10 @@ class CreateNewUpdateViewController: UIViewController{
     @IBAction func savePressed(_ sender: Any) {
         
         let title = updateTitle.text
-        let update = updateInfo.text ?? ""
+        let update = updateInfo.text
  
         if title != ""  && update != "" {
-            self.ref.child("Events").childByAutoId().setValue(["Club Id" : clubId ,"Event Title" : title, "Update" : update]){ (error, ref) -> Void in
+            self.ref.child("Updates").childByAutoId().setValue(["Club Id" : clubId ,"Update Title" : title!, "Update Info" : update!]){ (error, ref) -> Void in
                 self.showAlert(message: "The update has been posted", title: "Success")
             }
         }else{
@@ -46,6 +46,7 @@ class CreateNewUpdateViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        
 
     }
     

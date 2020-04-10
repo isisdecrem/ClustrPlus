@@ -13,4 +13,10 @@ class EventCellTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     var indexPath: IndexPath!
     
+    @IBOutlet weak var Date: UILabel!
+    
+    @IBOutlet weak var Time: UILabel!
+    
+    @IBOutlet weak var Location: UILabel!
+    @IBOutlet weak var Description: UITextView!
 }
