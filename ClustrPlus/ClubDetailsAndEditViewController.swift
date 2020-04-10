@@ -84,19 +84,7 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
         }
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        ref = Database.database().reference()
-        clubName.text = club.name
-        clubLink.text = club.signUpLink
-        clubDescription.text = club.description
-        tableView.dataSource = self
-        tableView.delegate = self
-        let newEvent = #imageLiteral(resourceName: "New Schedule")
-        newButton.setImage(newEvent, for: .normal)
-        
-        if scheduleState == true {
+    func loadEvent(){
         ref.child("Events").queryOrdered(byChild: "Event Title").observe(.value, with: { snapshot
             in
             var newEvents: [Event] = []
@@ -113,23 +101,45 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             self.events = newEvents
             self.tableView.reloadData()
         })
-        } else {
-            ref.child("Updates").queryOrdered(byChild: "Update Title").observe(.value, with: { snapshot
-                in
-                var newUpdates: [Update] = []
-                for child in snapshot.children{
-                    if let snapshot = child as? DataSnapshot,
-                    let update = Update(snapshot: snapshot){
-                        if  update.clubId == self.club.clubId{
-                            print("New update posted")
-                            newUpdates.append(update)
-                        }
+    }
+    
+    func loadUpdates(){
+        ref.child("Updates").queryOrdered(byChild: "Update Title").observe(.value, with: { snapshot
+            in
+            var newUpdates: [Update] = []
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot,
+                let update = Update(snapshot: snapshot){
+                    if  update.clubId == self.club.clubId{
+                        print("New update posted")
+                        newUpdates.append(update)
                     }
                 }
-                
-                self.updates = newUpdates
-                self.tableView.reloadData()
-            })
+            }
+            
+            self.updates = newUpdates
+            self.tableView.reloadData()
+        })
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ref = Database.database().reference()
+        clubName.text = club.name
+        clubLink.text = club.signUpLink
+        clubDescription.text = club.description
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 500
+        let newEvent = #imageLiteral(resourceName: "New Schedule")
+        newButton.setImage(newEvent, for: .normal)
+        
+        if scheduleState == true {
+            loadEvent()
+        } else {
+            loadUpdates()
         }
     }
     
@@ -142,7 +152,7 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             scheduleState = true
             let newEvent = #imageLiteral(resourceName: "New Schedule")
             newButton.setImage(newEvent, for: .normal)
-            tableView.reloadData()
+            loadEvent()
         }
     }
     
@@ -155,7 +165,7 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
             scheduleState = false
             let newUpdate = #imageLiteral(resourceName: "New Update")
             newButton.setImage(newUpdate, for: .normal)
-            tableView.reloadData()
+            loadUpdates()
         }
     }
     
@@ -163,10 +173,12 @@ class ClubDetailsAndEditViewController: UIViewController, UITableViewDelegate, U
         if segue.identifier == "ShowMakeNewEvent"  {
               let newEvent = segue.destination as? CreateNewEventViewController
             newEvent?.clubId = club.clubId
+            scheduleState = true
           }
         else if segue.identifier == "ShowMakeNewUpdate"{
             let newUpdate = segue.destination as? CreateNewUpdateViewController
             newUpdate?.clubId = club.clubId
+            scheduleState = false
         }
         else if segue.identifier == "toEdit"{
             let editEvent = segue.destination  as? EditClubViewController

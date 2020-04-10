@@ -68,37 +68,64 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var clubDescription: UITextView!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        ref = Database.database().reference()
-        clubName.text = club.name
-        clubLink.text = club.signUpLink
-        clubDescription.text = club.description
-        tableView.dataSource = self
-        tableView.delegate = self
-        let newEvent = #imageLiteral(resourceName: "New Schedule")
-        
-        if scheduleState == true {
-        ref.child("Events").queryOrdered(byChild: "Event Title").observe(.value, with: { snapshot
-            in
-            var newEvents: [Event] = []
-            for child in snapshot.children{
-                if let snapshot = child as? DataSnapshot,
-                let event = Event(snapshot: snapshot){
-                    if  event.clubId == self.club.clubId{
-                        print("New event added")
-                        newEvents.append(event)
-                    }
-                }
-            }
-            
-            self.events = newEvents
-            self.tableView.reloadData()
-        })
-        } else {
-            // load the updates
-        }
-    }
+   func loadEvent(){
+       ref.child("Events").queryOrdered(byChild: "Event Title").observe(.value, with: { snapshot
+           in
+           var newEvents: [Event] = []
+           for child in snapshot.children{
+               if let snapshot = child as? DataSnapshot,
+               let event = Event(snapshot: snapshot){
+                   if  event.clubId == self.club.clubId{
+                       print("New event added")
+                       newEvents.append(event)
+                   }
+               }
+           }
+           
+           self.events = newEvents
+           self.tableView.reloadData()
+       })
+   }
+   
+   func loadUpdates(){
+       ref.child("Updates").queryOrdered(byChild: "Update Title").observe(.value, with: { snapshot
+           in
+           var newUpdates: [Update] = []
+           for child in snapshot.children{
+               if let snapshot = child as? DataSnapshot,
+               let update = Update(snapshot: snapshot){
+                   if  update.clubId == self.club.clubId{
+                       print("New update posted")
+                       newUpdates.append(update)
+                   }
+               }
+           }
+           
+           self.updates = newUpdates
+           self.tableView.reloadData()
+       })
+   }
+   
+   
+   override func viewDidLoad() {
+       super.viewDidLoad()
+       ref = Database.database().reference()
+       clubName.text = club.name
+       clubLink.text = club.signUpLink
+       clubDescription.text = club.description
+       tableView.dataSource = self
+       tableView.delegate = self
+       tableView.rowHeight = UITableView.automaticDimension
+       tableView.estimatedRowHeight = 500
+       let newEvent = #imageLiteral(resourceName: "New Schedule")
+       
+       
+       if scheduleState == true {
+           loadEvent()
+       } else {
+           loadUpdates()
+       }
+   }
     
     @IBAction func schedulePress () {
         if scheduleState == false {
@@ -107,6 +134,7 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
             updateB.setImage(UL, for: .normal)
             scheduleB.setImage(SD, for: .normal)
             scheduleState = true
+            loadEvent()
         }
     }
     
@@ -117,6 +145,7 @@ class MemberClubViewerViewController: UIViewController, UITableViewDelegate, UIT
              updateB.setImage(UD, for: .normal)
             scheduleB.setImage(SL, for: .normal)
             scheduleState = false
+            loadUpdates()
             
         }
     }
